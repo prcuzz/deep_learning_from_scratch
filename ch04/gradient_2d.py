@@ -53,10 +53,10 @@ if __name__ == '__main__':
     x1 = np.arange(-2, 2.5, 0.25)
     X, Y = np.meshgrid(x0, x1)
     
-    X = X.flatten()
-    Y = Y.flatten()
+    X = X.flatten()	# 这个X中的数值代表从右向左、从下向上依次排列的所有点的X轴坐标值
+    Y = Y.flatten()	# 这个Y中的数值代表从右向左、从下向上依次排列的所有点的Y轴坐标值
     
-    grad = numerical_gradient(function_2, np.array([X, Y]) )
+    grad = numerical_gradient(function_2, np.array([X, Y]) )	# grad里有个2*324的二维函数，表示的是这324个点在x方向和y方向的梯度分量
     
     plt.figure()
     plt.quiver(X, Y, -grad[0], -grad[1],  angles="xy",color="#666666")#,headwidth=10,scale=40,color="#444444")
